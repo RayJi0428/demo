@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>螢幕比例計算</title>
+    <style>
+        html,
+        body {
+            -ms-touch-action: none;
+            padding: 0;
+            border: 0;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        @media screen and (orientation:portrait) {
+            h1 {
+                font-size: 10vw;
+                width: 100vw;
+                height: 5vh;
+            }
+
+            span {
+                font-size: 5vw;
+                width: 30vw;
+                height: 5vh;
+            }
+
+            input {
+                font-size: 5vw;
+                width: 30vw;
+                height: 5vh;
+            }
+
+            img {
+                font-size: 5vw;
+                width: 30vw;
+            }
+        }
+    </style>
+</head>
+
+<body onload="onload()">
+    <h1>螢幕比例計算</h1>
+    <span>短邊</span>
+    <input id='short' text="12" type="text" onchange="calculate()"></input><br>
+    <span>長邊</span>
+    <input id='long' type="text" onchange="calculate()" /><br>
+    <span>比例</span>
+    <input id='ratio' value="9:X" readonly /><br>
+    <h1>手機直接掃</h1>
+    <img src="qrcode.png" />
+    <script>
+        function calculate() {
+            let short = parseFloat(document.getElementById('short').value)
+            let long = parseFloat(document.getElementById('long').value)
+            let ratio = (9 * long / short).toFixed(2)
+            document.getElementById('ratio').value = `9:${ratio}`
+        }
+        function onload() {
+            let short = Math.min(document.body.clientWidth, document.body.clientHeight)
+            let long = Math.max(document.body.clientWidth, document.body.clientHeight)
+            document.getElementById('short').value = short;
+            document.getElementById('long').value = long;
+            calculate();
+
+        }
+    </script>
+</body>
