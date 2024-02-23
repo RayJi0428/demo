@@ -37,12 +37,17 @@
                 font-size: 5vw;
                 width: 30vw;
             }
+
+            button {
+                font-size: 5vw;
+            }
         }
     </style>
 </head>
 
 <body onload="onload()">
     <h1>螢幕比例計算</h1>
+    <button onclick="window.location.reload()">刷新</button><br>
     <span>短邊</span>
     <input id='short' text="12" type="text" onchange="calculate()"></input><br>
     <span>長邊</span>
