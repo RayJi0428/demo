@@ -1,12 +1,16 @@
 let config = {
     "src": [
-        "sound\\all_music.ogg?1712681804652",
-        "sound\\all_music.mp3?1712681804652"
+        "sound\\all_music.ogg?1712682348124",
+        "sound\\all_music.mp3?1712682348124"
     ],
     "sprite": {
         "mixkit-classic-click-1117": [
             0,
             287.98185941043084
+        ],
+        "roll_to_table": [
+            2000,
+            156.73469387755114
         ]
     }
 }
