@@ -54,10 +54,10 @@
 </head>
 
 <body>
-    <!-- <script src="./howler.js"></script> -->
-    <script src="https://cdn.bootcdn.net/ajax/libs/howler/2.2.3/howler.js"></script>
-    <script src="./main.js"></script>
-    <h1>SoundTest</h1>
+    <script src="./howler.js?1"></script>
+    <!-- <script src="https://cdn.bootcdn.net/ajax/libs/howler/2.2.3/howler.js"></script> -->
+    <script src="./main2.js?123"></script>
+    <h1 id="title">SoundTest 2.0</h1>
     <h2 id="sum">total play times:0</h2>
     <br>
     <button id='play' style="display: none;" onclick="playSound()">PLAY</button>
@@ -69,4 +69,7 @@
 
     <select id='soundlist' name="cars" size="10">
     </select>
+    <script>
+        mainLoad();
+    </script>
 </body>

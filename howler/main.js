@@ -110,10 +110,18 @@ let config = {
     ]
   }
 }
+// window.alert(Howler._navigator.vendor)
+// Howler.html5PoolSize = 1;
+// Howler.autoUnlock = false;
 let howl = new Howl(config);
 Howler.autoSuspend = false;
+// Howler.autoUnlock = false;
+
 howl.once('load', () => { this.onConfigLoadComplete(); });
 function onConfigLoadComplete() {
+
+  document.getElementById('title').textContent = 'SoundTest 2.1'
+
   document.getElementById('play').style.display = "block";
   let select = document.getElementById('soundlist');
   let size = 0;
