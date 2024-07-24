@@ -46,7 +46,7 @@ jobs:
       - uses: actions/checkout@main
       - uses: actions/setup-node@main
         with:
-          node-version: '10.x'
+          node-version: '18.x'
       # Install the dependencies need to build the app
       - name: Install Dependencies
         run: npm install
