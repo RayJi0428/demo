@@ -32,5 +32,5 @@ jobs:
         with:
           ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: main  # 要部署到的分支，比如 gh-pages
-          FOLDER: dist  # Angular 应用程序的构建输出目录
+          FOLDER: dist  # Angular 应用程序的构建输出目录1
           CLEAN: true  # 可选项，是否清除目标分支的其他文件，默认为 true
