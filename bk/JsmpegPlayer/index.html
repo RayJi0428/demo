@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<head>
+    <style>
+        #fname {
+            margin: 0 0;
+            width: 80vw;
+        }
+
+        #okBtn {
+            margin: 0 0;
+            width: 10vw;
+        }
+
+        #video_canvas {
+            margin: 5vw 0vw;
+        }
+
+        input {
+            width: 77vw;
+        }
+    </style>
+</head>
+
+<body>
+    <script src="jsmpeg.min.js"></script>
+    <span>URL</span>
+    <input type="text" value="https://jsmpeg.com/bjork-all-is-full-of-love.ts" onchange="onURLChange(value)"></input><br><br>
+    <div class="jsmpeg" id='player' data-url="video.ts" data-autoplay="false"></div>
+    <script>
+        //let url = window.location.search.split('?')[1];
+        //document.getElementById('player').setAttribute('data-url', url);
+        // var player = new JSMpeg.Player(url, {
+        //     loop: false,
+        //     autoplay: false,
+        //     canvas: document.getElementById('video_canvas')
+        // });
+        function onURLChange(url) {
+            document.getElementById('player').setAttribute('data-url', url);
+            var player = new JSMpeg.Player(url, {
+                loop: false,
+                autoplay: false,
+                canvas: document.getElementById('video_canvas')
+            });
+        }
+    </script>
+</body>

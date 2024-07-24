@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>解析url字串</title>
+    <style>
+        textarea {
+            width: 40vw;
+            height: 80vh;
+            resize: none;
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="copyVar()">複製語法(切到mainframe貼上)</button>
+    <table>
+        <tr>
+            <td>Input</td>
+            <td>Output</td>
+        </tr>
+        <tr>
+            <td><textarea spellcheck="false" id="in">%7B%22Value%22%3A100%7D</textarea>
+            </td>
+            <td><textarea spellcheck="false" id="out"></textarea></td>
+        </tr>
+        <tr>
+            <td><button onclick="decode()">decode</button></td>
+        </tr>
+    </table>
+    <script>
+        function copyVar() {
+            navigator.clipboard.writeText("copy(document.getElementById('clientNetContent').getAttribute('data-egret-vars'))")
+        }
+        function decode() {
+            let inputStr = document.getElementById('in').value;
+            let decodeStr = decodeURIComponent(inputStr)
+            let jsonStr = JSON.parse(decodeStr)
+            let out = document.getElementById('out');
+            out.value = JSON.stringify(jsonStr, null, 2)
+        }
+    </script>
+</body>
