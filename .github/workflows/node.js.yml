@@ -17,6 +17,7 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '18'  # 使用的 Node.js 版本
+
       - name: Install Angular CLI
         run: npm install -g @angular/cli
 
@@ -24,7 +25,7 @@ jobs:
         run: npm install
 
       - name: Build Angular app
-        run: ng build --prod
+        run: ng build --configuration=production
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@3.7.1
