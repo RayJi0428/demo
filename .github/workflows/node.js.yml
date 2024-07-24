@@ -1,4 +1,4 @@
-name: Deploy Angular App
+name: Build and Deploy Angular App
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - main  # 触发部署的分支，可以根据实际情况调整
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -17,6 +17,8 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '18'  # 使用的 Node.js 版本
+      - name: Install Angular CLI
+        run: npm install -g @angular/cli
 
       - name: Install dependencies
         run: npm install
