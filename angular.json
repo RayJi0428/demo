@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/lesson-001",
+            "outputPath": "dist/demo",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
